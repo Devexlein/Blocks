@@ -19,6 +19,7 @@
    }
 
    .menu__icon-menu,
+   .menu__link--desc,
    .menu__button--open .menu__icon-cross {
       display: block;
    }

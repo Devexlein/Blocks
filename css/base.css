@@ -188,6 +188,7 @@ button::-moz-focus-inner {
    display: grid;
 }
 
+/* =------ logo --------------------------------------= */
 .logo {
    display: grid;
    grid-template-columns: min-content 1fr;
@@ -215,6 +216,7 @@ button::-moz-focus-inner {
    color: var(--basic-dark, #273238);
 }
 
+/* =------ nav --------------------------------------= */
 .menu__list {
    font-size: 12px;
 }
@@ -225,13 +227,19 @@ button::-moz-focus-inner {
 }
 
 .menu__link {
-   /* text-decoration-line: underline; */
    color: var(--special-dark, #3B84BB);
 }
 
 .menu__link:hover {
    text-decoration-line: underline;
    color: var(--special-neutral, #61AFB4);
+}
+
+.menu__link--desc {
+   display: none;
+   text-transform: none;
+   cursor: none;
+   pointer-events: none;
 }
 
 .menu__link--current {
@@ -257,6 +265,34 @@ button::-moz-focus-inner {
    width: 16px;
    height: 16px;
    content: url('../../images/patreon.svg');
+}
+
+/* =------ title --------------------------------------= */
+.title {
+   padding: 15px;
+   font-size: 22px;
+   font-weight: 700;
+}
+
+/* =------ news --------------------------------------= */
+
+.news {}
+
+.news--first {
+   background-color: lightgreen;
+}
+
+.news__title {
+   padding: 15px 15px 10px;
+   font-size: 18px;
+}
+
+.news__lead {
+   padding: 0 15px 15px;
+}
+
+.news--second {
+   background-color: peachpuff;
 }
 
 @media (width > 736px) {
@@ -292,4 +328,61 @@ button::-moz-focus-inner {
    .header__menu {
       align-self: center;
    }
+}
+
+/* ======= COLUMNS-SECTION ===================================================================================== */
+.columns-section {
+   margin: auto;
+   padding: 15px;
+   background-color: lightblue;
+}
+
+.columns-section__title {}
+
+.columns-section__box {
+   margin-bottom: 30px;
+}
+
+.columns-section__box {}
+
+.box {
+   padding: 15px;
+}
+
+.box__description {
+   margin-bottom: 10px;
+   color: maroon;
+}
+
+.box__description span {
+   font-weight: 700;
+}
+
+.box__content {}
+
+.columns {}
+
+.columns__item {}
+
+.columns__item--first {}
+
+.columns__item--second {}
+
+/* =------ columns-table --------------------------------------= */
+
+.columns-table {
+   border-collapse: collapse;
+}
+
+.columns-table__item {
+   width: 50%;
+   vertical-align: top;
+}
+
+.columns-table__item--first {
+   padding-right: 10px;
+}
+
+.columns-table__item--second {
+   padding-left: 10px;
 }
