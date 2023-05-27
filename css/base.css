@@ -368,6 +368,27 @@ button::-moz-focus-inner {
 
 .columns__item--second {}
 
+/* =------ columns-grid --------------------------------------= */
+.columns-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   column-gap: 20px;
+}
+
+/* =------ columns-flex --------------------------------------= */
+.columns-flex {
+   display: flex;
+   /* column-gap: 20px; */
+   /* для улучшения кроссбраузерности */
+   justify-content: space-between;
+}
+
+.columns-flex__item {
+   /* width: 50%; */
+   /* для улучшения кроссбраузерности */
+   width: calc(50% - 10px);
+}
+
 /* =------ columns-multi --------------------------------------= */
 .columns-multi {
    columns: 2;
