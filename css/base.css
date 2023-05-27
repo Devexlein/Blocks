@@ -368,6 +368,38 @@ button::-moz-focus-inner {
 
 .columns__item--second {}
 
+/* =------ columns-inline --------------------------------------= */
+.columns-inline {
+   word-spacing: 20px;
+   font-size: 0;
+}
+
+.columns-inline__item {
+   display: inline-block;
+   width: calc(50% - 10px);
+   vertical-align: top;
+   word-spacing: normal;
+   font-size: 14px;
+}
+
+/* =------ columns-float --------------------------------------= */
+.columns-float {
+   /* overflow: hidden; содержимое может обрезаться*/
+   display: flow-root;
+}
+
+.columns-float__item {
+   width: calc(50% - 10px);
+}
+
+.columns-float__item--first {
+   float: left;
+}
+
+.columns-float__item--second {
+   float: right;
+}
+
 /* =------ columns-table --------------------------------------= */
 
 .columns-table {
