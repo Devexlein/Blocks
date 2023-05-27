@@ -368,6 +368,17 @@ button::-moz-focus-inner {
 
 .columns__item--second {}
 
+/* =------ columns-multi --------------------------------------= */
+.columns-multi {
+   columns: 2;
+   column-gap: 20px;
+}
+
+.columns-multi__item {
+   /* чтобы контент не перетекал из одного столбца в другой */
+   break-inside: avoid;
+}
+
 /* =------ columns-inline --------------------------------------= */
 .columns-inline {
    word-spacing: 20px;
