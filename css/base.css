@@ -343,7 +343,9 @@ button::-moz-focus-inner {
    margin-bottom: 30px;
 }
 
-.columns-section__box {}
+.columns-section__box--salmon {
+   background-color: darksalmon;
+}
 
 .box {
    padding: 15px;
@@ -352,6 +354,10 @@ button::-moz-focus-inner {
 .box__description {
    margin-bottom: 10px;
    color: maroon;
+}
+
+.box__description--green {
+   color: darkgreen;
 }
 
 .box__description span {
@@ -449,4 +455,56 @@ button::-moz-focus-inner {
 
 .columns-table__item--second {
    padding-left: 10px;
+}
+
+/* =------ columns-svg --------------------------------------= */
+.columns-svg {}
+
+.columns__item {}
+
+.columns__item--first {}
+
+.columns__item--second {}
+
+/* =------ columns-svg --------------------------------------= */
+.columns-svg {
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+
+/* =------ columns-writing --------------------------------------= */
+
+.columns-writing {
+   writing-mode: vertical-lr;
+}
+
+.columns-writing__item {
+   width: 470px;
+   writing-mode: horizontal-tb;
+}
+
+.columns-writing__item+.columns-writing__item {
+   margin-left: 20px;
+}
+
+/* =------ columns-position --------------------------------------= */
+
+.columns-position {
+   position: relative;
+   height: 280px;
+}
+
+.columns-position__item {
+   position: absolute;
+   top: 0;
+   width: calc(50% - 10px);
+}
+
+.columns-position__item--first {
+   left: 0;
+}
+
+.columns-position__item--second {
+   right: 0;
 }
