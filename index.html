@@ -162,33 +162,113 @@
          </table>
       </div>
 
-      <div class="columns-section__box columns-section__box--tomato box">
-         <p class="box__description box__description--green"><span>Нестандартный способ №4.</span> Позиционирование </p>
-         <div class="box__content columns">
-            <div class="columns__item columns__item--first">
-               <article class="news news--first">
+      <div class="columns-section__box columns-section__box--salmon box box--width">
+         <p class="box__description"><span>Нестандартный способ №5.</span> Frame-элемент - «окно» для другого документа
+            (<frame>элементы входят в 3 набора <frameset>, которые имеют некоторые возможности компоновки. Занимают всё окно,
+                  ширина кадров указана в cols-атрибуте, связаны с «встроенным» фреймом с помощью src-атрибута).<br>
+                  Технология устарела, но работает во всех браузерах.</p>
+         <iframe class="box__content columns-frame" src="data:text/html,
+            <!DOCTYPE html>
+            <meta charset='utf-8'>
+            <frameset cols='50%, 20, 50%' border='0'>
+               <frame frameborder='0' src='data:text/html,
+                  <!DOCTYPE html>
+                  <meta charset=utf-8>
+                  <style>
+                        body {
+                           margin: 0;
+                           font-family: sans-serif;
+                           }
+
+                        .news {
+                           background-color: lightgreen;
+                           }
+                        
+                        .news__title {
+                           padding: 15px 15px 10px;
+                           margin: 0;
+                           line-height: 1.4;
+                           font-size: 18px;
+                           font-weight: normal;
+                           }
+                        
+                        .news__lead {
+                           padding: 0 15px 15px;
+                           margin: 0;
+                           line-height: 1.4;
+                           font-size: 14px;
+                           }
+                     </style>
+                     <article class=news>
+                        <h4 class=news__title>Круги на полях были обнаружены в Англии. Но это круги обнимающихся щенков лабрадора!</h4>
+                        <p class=news__lead>В английском городке Брэдстон в графстве Девон восемь щенков лабрадора легли в круг, сбившись в кучу. Увы, один из щенков опоздал. Ему приходилось забираться прямо на своих братьев и сестер и спать на их спинах. Однако он был еще мягче и теплее!</p>
+                     </article>
+               '>
+               <frame frameborder='0' src='data:text/html,'>
+               <frame frameborder='0' src='data:text/html,
+                  <!DOCTYPE html>
+                  <meta charset=utf-8>
+                  <style>
+                     body {
+                        margin: 0;
+                        font-family: sans-serif;
+                        }
+
+                     .news {
+                        background-color: peachpuff;
+                        }
+                        
+                     .news__title {
+                        padding: 15px 15px 10px;
+                        margin: 0;
+                        line-height: 1.4;
+                        font-size: 18px;
+                        font-weight: normal;
+                        }
+                     
+                     .news__lead {
+                        padding: 0 15px 15px;
+                        margin: 0;
+                        line-height: 1.4;
+                        font-size: 14px;
+                        }
+                  </style>
+                  <article class=news>
+                     <h4 class=news__title>На Камчатке лиса украла у туриста фотоаппарат. Так что теперь вы увидите прямую трансляцию из его рта</h4>
+                     <p class=news__lead>Наконец, мы нашли видео, которое заставило бы Эммануэля Любецки, работавшего над Survivor, Birdman и Gravity, позавидовать операторской работе! Не будем держать вас в напряжении: на Камчатке лиса украла у невнимательного туриста фотоаппарат и скрылась с ним. Соответственно, вид получился буквально изнутри лисы, с АСМР-звуком в виде ее громкого пыхтения.</p>
+                  </article>
+               '>
+            </frameset>
+         "></iframe>
+      </div>
+      </div>
+      <div class="columns-section__box columns-section__box--salmon box  box--width">
+         <p class="box__description"><span>Нестандартный способ №4.</span> Контент в качестве фонового изображения (не Canvas). Работает только в Firefox.</p>
+         <div class="box__content columns-bg">
+            <div class="columns-bg__item">
+               <article class="news news--first" id="news-first">
                   <h4 class="news__title">Круги на полях были обнаружены в Англии. Но это круги обнимающихся щенков лабрадора!</h4>
                   <p class="news__lead">В английском городке Брэдстон в графстве Девон восемь щенков лабрадора легли в круг, сбившись в кучу. Увы, один из щенков опоздал. Ему приходилось забираться прямо на своих братьев и сестер и спать на их спинах. Однако он был еще мягче и теплее!</p>
                </article>
             </div>
-            <div class="columns__item columns__item--second">
-               <article class="news news--second">
+            <div class="columns-bg__item">
+               <article class="news news--second" id="news-second">
                   <h4 class="news__title">На Камчатке лиса украла у туриста фотоаппарат. Так что теперь вы увидите прямую трансляцию из его рта</h4>
                   <p class="news__lead">Наконец, мы нашли видео, которое заставило бы Эммануэля Любецки, работавшего над Survivor, Birdman и Gravity, позавидовать операторской работе! Не будем держать вас в напряжении: на Камчатке лиса украла у невнимательного туриста фотоаппарат и скрылась с ним. Соответственно, вид получился буквально изнутри лисы, с АСМР-звуком в виде ее громкого пыхтения.</p>
                </article>
             </div>
          </div>
       </div>
-      <div class="columns-section__box columns-section__box--salmon box">
-         <p class="box__description"><span>Нестандартный способ №3.</span> Svg с HTML внутри (благодаря foreignObject и позиционированию preserveAspectRatio="xMidYMin" - посередине и сверху, что позволит масштабироваться). Позиционируем внутри через x/y (вместо left/top), содержимое, обернутое в SVG, не может влиять на размеры родителя, поэтому установливаем их принудительно. </p>
-         <svg class="box__content columns-svg" viewBox="0 0 800 280" preserveAspectRatio="xMidYMin">
-            <foreignObject class="columns-svg__item" x="0" y="0" width="390" height="100%">
+      <div class="columns-section__box columns-section__box--salmon box box--width">
+         <p class="box__description"><span>Нестандартный способ №3.</span> Svg с HTML внутри (благодаря foreignObject - примет чужие элементы, и позиционированию preserveAspectRatio="xMidYMin" (посередине и сверху) - позволит масштабироваться). Позиционируем внутри через x/y (вместо left/top), содержимое, обернутое в SVG, не может влиять на размеры родителя, поэтому установливаем их принудительно. </p>
+         <svg class="box__content columns-svg" viewBox="0 0 1200 340" preserveAspectRatio="xMidYMin">
+            <foreignObject class="columns-svg__item" x="0" y="0" width="590" height="100%">
                <article class="news news--first">
                   <h4 class="news__title">Круги на полях были обнаружены в Англии. Но это круги обнимающихся щенков лабрадора!</h4>
                   <p class="news__lead">В английском городке Брэдстон в графстве Девон восемь щенков лабрадора легли в круг, сбившись в кучу. Увы, один из щенков опоздал. Ему приходилось забираться прямо на своих братьев и сестер и спать на их спинах. Однако он был еще мягче и теплее!</p>
                </article>
             </foreignObject>
-            <foreignObject class="columns-svg__item" x="410" y="0" width="390" height="100%">
+            <foreignObject class="columns-svg__item" x="610" y="0" width="590" height="100%">
                <article class="news news--second">
                   <h4 class="news__title">На Камчатке лиса украла у туриста фотоаппарат. Так что теперь вы увидите прямую трансляцию из его рта</h4>
                   <p class="news__lead">Наконец, мы нашли видео, которое заставило бы Эммануэля Любецки, работавшего над Survivor, Birdman и Gravity, позавидовать операторской работе! Не будем держать вас в напряжении: на Камчатке лиса украла у невнимательного туриста фотоаппарат и скрылась с ним. Соответственно, вид получился буквально изнутри лисы, с АСМР-звуком в виде ее громкого пыхтения.</p>
@@ -196,24 +276,7 @@
             </foreignObject>
          </svg>
       </div>
-      <div class="columns-section__box columns-section__box--salmon box">
-         <p class="box__description"><span>Нестандартный способ №2.</span> Направление письма - меняем режим записи родительского блока на вертикальный, чтобы строки стали столбцами и начинались справа. Блоки не адаптивны.</p>
-         <div class="box__content columns-writing">
-            <div class="columns-writing__item">
-               <article class="news news--first">
-                  <h4 class="news__title">Круги на полях были обнаружены в Англии. Но это круги обнимающихся щенков лабрадора!</h4>
-                  <p class="news__lead">В английском городке Брэдстон в графстве Девон восемь щенков лабрадора легли в круг, сбившись в кучу. Увы, один из щенков опоздал. Ему приходилось забираться прямо на своих братьев и сестер и спать на их спинах. Однако он был еще мягче и теплее!</p>
-               </article>
-            </div>
-            <div class="columns-writing__item">
-               <article class="news news--second">
-                  <h4 class="news__title">На Камчатке лиса украла у туриста фотоаппарат. Так что теперь вы увидите прямую трансляцию из его рта</h4>
-                  <p class="news__lead">Наконец, мы нашли видео, которое заставило бы Эммануэля Любецки, работавшего над Survivor, Birdman и Gravity, позавидовать операторской работе! Не будем держать вас в напряжении: на Камчатке лиса украла у невнимательного туриста фотоаппарат и скрылась с ним. Соответственно, вид получился буквально изнутри лисы, с АСМР-звуком в виде ее громкого пыхтения.</p>
-               </article>
-            </div>
-         </div>
-      </div>
-      <div class="columns-section__box columns-section__box--salmon box">
+      <div class="columns-section__box columns-section__box--salmon box box--width">
          <p class="box__description"><span>Нестандартный способ №1.</span> Позиционирование - нарушает поток контента (высота блока). </p>
          <div class="box__content columns-position">
             <div class="columns-position__item columns-position__item--first">
@@ -230,6 +293,24 @@
             </div>
          </div>
       </div>
+      <div class="columns-section__box columns-section__box--salmon box box--width">
+         <p class="box__description"><span>Нестандартный способ №2.</span> Направление письма - меняем режим записи родительского блока на вертикальный, чтобы строки стали столбцами и начинались справа. Блоки не адаптивны.</p>
+         <div class="box__content columns-writing">
+            <div class="columns-writing__item">
+               <article class="news news--first">
+                  <h4 class="news__title">Круги на полях были обнаружены в Англии. Но это круги обнимающихся щенков лабрадора!</h4>
+                  <p class="news__lead">В английском городке Брэдстон в графстве Девон восемь щенков лабрадора легли в круг, сбившись в кучу. Увы, один из щенков опоздал. Ему приходилось забираться прямо на своих братьев и сестер и спать на их спинах. Однако он был еще мягче и теплее!</p>
+               </article>
+            </div>
+            <div class="columns-writing__item">
+               <article class="news news--second">
+                  <h4 class="news__title">На Камчатке лиса украла у туриста фотоаппарат. Так что теперь вы увидите прямую трансляцию из его рта</h4>
+                  <p class="news__lead">Наконец, мы нашли видео, которое заставило бы Эммануэля Любецки, работавшего над Survivor, Birdman и Gravity, позавидовать операторской работе! Не будем держать вас в напряжении: на Камчатке лиса украла у невнимательного туриста фотоаппарат и скрылась с ним. Соответственно, вид получился буквально изнутри лисы, с АСМР-звуком в виде ее громкого пыхтения.</p>
+               </article>
+            </div>
+         </div>
+      </div>
+
    </section>
 
    <script>
