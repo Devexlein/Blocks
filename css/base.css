@@ -192,7 +192,9 @@ button::-moz-focus-inner {
 /* =------ logo --------------------------------------= */
 .logo {
    display: grid;
+   grid-template-columns: -webkit-min-content 1fr;
    grid-template-columns: min-content 1fr;
+   -moz-column-gap: 8px;
    column-gap: 8px;
    line-height: 1;
 }
@@ -232,6 +234,7 @@ button::-moz-focus-inner {
 }
 
 .menu__link:hover {
+   -webkit-text-decoration-line: underline;
    text-decoration-line: underline;
    color: var(--special-neutral, #61AFB4);
 }
@@ -314,12 +317,14 @@ button::-moz-focus-inner {
    .menu__list {
       display: grid;
       grid-auto-flow: column;
+      -moz-column-gap: 8px;
       column-gap: 8px;
    }
 
    .header {
       padding-left: 24px;
       padding-right: 24px;
+      grid-template-columns: -webkit-max-content -webkit-max-content;
       grid-template-columns: max-content max-content;
       justify-content: space-between;
    }
@@ -365,6 +370,7 @@ button::-moz-focus-inner {
 .columns-grid {
    display: grid;
    grid-template-columns: 1fr 1fr;
+   -moz-column-gap: 20px;
    column-gap: 20px;
 }
 
@@ -384,12 +390,15 @@ button::-moz-focus-inner {
 
 /* =------ columns-multi --------------------------------------= */
 .columns-multi {
+   -moz-columns: 2;
    columns: 2;
+   -moz-column-gap: 20px;
    column-gap: 20px;
 }
 
 .columns-multi__item {
    /* чтобы контент не перетекал из одного столбца в другой */
+   -moz-column-break-inside: avoid;
    break-inside: avoid;
 }
 
@@ -468,6 +477,7 @@ button::-moz-focus-inner {
 
 .columns-bg__item {
    /* прячем колонки */
+   -webkit-clip-path: inset(50%);
    clip-path: inset(50%);
    width: calc(50% - 10px);
 }
@@ -502,11 +512,15 @@ button::-moz-focus-inner {
 /* =------ columns-writing --------------------------------------= */
 
 .columns-writing {
+   -webkit-writing-mode: vertical-lr;
+   -ms-writing-mode: tb-lr;
    writing-mode: vertical-lr;
 }
 
 .columns-writing__item {
    width: 560px;
+   -webkit-writing-mode: horizontal-tb;
+   -ms-writing-mode: lr-tb;
    writing-mode: horizontal-tb;
 }
 
