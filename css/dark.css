@@ -1,0 +1,9 @@
+:root {
+    --back-color: #273a43;
+    --back-image: url('../images/dark-theme.jpg');
+    --celestial-body: #fffff0;
+    --celestial-body-background: #fffff0;
+    --celestial-body-shadow: rgb(255 160 122 / 0.6);
+    --celestial-body-glow-1: rgb(255 255 255 / 0.5);
+    --celestial-body-glow-2: rgb(250 250 250 / 0.3);
+}
