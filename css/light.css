@@ -1,9 +1,26 @@
-:root {
-    --back-color: #c7cbcc;
-    --back-image: url('../images/light-theme.jpg');
+.sky {
+    --sky-color: #c7cbcc;
+    --sky-image: url('../images/light-theme.jpg');
+}
+
+.celestial-body {
     --celestial-body: #fdd03c;
     --celestial-body-background: #fff566;
     --celestial-body-shadow: rgb(222 168 33 / 0.4);
     --celestial-body-glow-1: rgb(70 130 180 / 0.4);
     --celestial-body-glow-2: rgb(252 181 2 / 0.4);
+}
+
+/* =------ switcher-themes --------------------------------------= */
+.switcher__radio {
+    -webkit-filter: invert(0);
+    filter: invert(0);
+}
+.switcher__radio:checked {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+.switcher__status {
+    -webkit-filter: invert(0);
+    filter: invert(0);
 }

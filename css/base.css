@@ -162,8 +162,7 @@ button::-moz-focus-inner {
    padding: 0px 15px;
 } */
 
-/* Переменные */
-
+/** Переменные */
 :root {
     color-scheme: light dark;
 
@@ -337,16 +336,16 @@ button::-moz-focus-inner {
 }
 
 /* ======= THEMES-PAGE ===================================================================================== */
-.themes-page {
+.sky {
     display: grid;
     place-content: center;
-    background-color: var(--back-color, #c7cbcc);
-    background-image: var(--back-image);
+    background-color: var(--sky-color, #c7cbcc);
+    background-image: var(--sky-image);
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.themes-page span {
+.celestial-body {
     width: 20vmin;
     height: 20vmin;
     border-radius: 50%;
@@ -359,6 +358,77 @@ button::-moz-focus-inner {
     /* opacity: 0.85; */
     box-shadow: 0 0 10vmin var(--celestial-body-glow-1, rgba(70, 130, 180, 0.4)),
         1vmin 0 10vmin var(--celestial-body-glow-2, rgba(252, 181, 2, 0.4));
+}
+
+/* =------ switcher-themes --------------------------------------= */
+.switcher {
+    padding: 2px;
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.switcher__legend {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.switcher__radio {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    transition: -webkit-filter 0.2s ease-in;
+    transition: filter 0.2s ease-in;
+    transition: filter 0.2s ease-in, -webkit-filter 0.2s ease-in;
+}
+.switcher__radio:focus {
+    outline: none;
+}
+
+.switcher__status {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    box-shadow: 0 0 0 2px rgb(0 0 0 / 0.2);
+    border-radius: 18px;
+    background-color: rgb(255 255 255 / 0.5);
+    background-repeat: no-repeat;
+    background-image: url('../images/status.svg');
+    background-size: 32px;
+    background-position: center;
+    transition: background-position 0.2s ease-in;
+}
+/* для пользователей, пользующихся только клавиатурой */
+.switcher__radio:focus-visible ~ .switcher__status {
+    box-shadow: 0 0 0 2px black;
+}
+.switcher__radio--light {
+    background-image: url('../images/light.svg');
+}
+.switcher__radio--auto {
+    background-image: url('../images/auto.svg');
+}
+.switcher__radio--dark {
+    background-image: url('../images/dark.svg');
+}
+.switcher__radio--light:checked ~ .switcher__status {
+    background-position: left 2px center;
+}
+.switcher__radio--auto:checked ~ .switcher__status {
+    background-position: center center;
+}
+.switcher__radio--dark:checked ~ .switcher__status {
+    background-position: right 2px center;
 }
 
 /* ======= COLUMNS-SECTION ===================================================================================== */
