@@ -165,6 +165,8 @@ button::-moz-focus-inner {
 /* Переменные */
 
 :root {
+    color-scheme: light dark;
+
     --basic-black: #000000;
     --basic-dark: #273238;
     --basic-semi-light: #696969;

@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Светлая и темная темы</title>
 
+        <!-- приоритет тем -->
+        <meta name="color-scheme" content="light dark" />
         <!-- цвет вкладки в Safari (проверь контраст!) -->
         <meta
             name="theme-color"
@@ -17,6 +19,18 @@
             media="(prefers-color-scheme: dark)"
             content="#273a43"
         />
+        <!-- для старых брайзеров, не поддерживающих цветовые схемы -->
+        <script>
+            if (
+                matchMedia('(prefers-color-scheme: dark)').media === 'not all'
+            ) {
+                document.documentElement.style.display = 'none';
+                document.head.insertAdjacentHTML(
+                    'beforeend',
+                    '<link rel="stylesheet" href="../css/light.css" onload="document.documentElement.style.display=\'\'">'
+                );
+            }
+        </script>
 
         <link rel="stylesheet" href="../css/base.css" />
         <link
