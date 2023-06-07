@@ -164,8 +164,6 @@ button::-moz-focus-inner {
 
 /** Переменные */
 :root {
-    color-scheme: light dark;
-
     --basic-black: #000000;
     --basic-dark: #273238;
     --basic-semi-light: #696969;
@@ -269,7 +267,7 @@ button::-moz-focus-inner {
     margin-left: -18px;
     width: 16px;
     height: 16px;
-    content: url('../../images/patreon.svg');
+    content: url('../images/patreon.svg');
 }
 
 /* =------ title --------------------------------------= */
