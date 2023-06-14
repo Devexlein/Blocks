@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Карточки товаров/корзина</title>
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/base.css" />
+        <link
+            rel="stylesheet"
+            href="../css/mobile.css"
+            media="(max-width: 767.98px)"
+        />
+        <link
+            rel="stylesheet"
+            href="../css/tablet.css"
+            media="(min-width: 768px) and (max-width: 1023.98px)"
+        />
+        <link
+            rel="stylesheet"
+            href="../css/desktop.css"
+            media="(min-width: 1024px)"
+        />
+    </head>
+
+    <body class="page__body">
+        <header class="header">
+            <div class="header__logo logo">
+                <img
+                    class="logo__image"
+                    src="../images/logo.svg"
+                    width="40"
+                    height="44"
+                />
+                <p class="logo__title">Структура-блоки</p>
+                <p class="logo__tagline">Решения, компоновка и элементы</p>
+            </div>
+            <nav class="header__menu menu">
+                <button
+                    class="menu__button"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="menu__list"
+                    aria-label="Открыть меню"
+                >
+                    <svg
+                        class="menu__icon"
+                        aria-hidden="true"
+                        width="32"
+                        height="32"
+                    >
+                        <use
+                            class="menu__icon-menu"
+                            href="../images/sprite.svg#menu"
+                        ></use>
+                        <use
+                            class="menu__icon-cross"
+                            href="../images/sprite.svg#cross"
+                        ></use>
+                    </svg>
+                </button>
+                <ul class="menu__list" id="menu__list" role="list">
+                    <li class="menu__item">
+                        <p
+                            class="menu__link menu__link--desc menu__link--inactive"
+                        >
+                            Для мобильного меню используется сетка Grid (gap,
+                            выстраивание в колонку) и абсолютное
+                            позиционирование (шапка и меню не мешают друг другу,
+                            z-index); контент скрывается тенью; иконка открытого
+                            и закрытого меню из svg-sprite подключается двумя
+                            тегами "use"; капсулирование стилей на базовые и тип
+                            экрана (избегаем импорта, подгружаем только
+                            необходимые)
+                        </p>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="/index.html">Колонки</a>
+                    </li>
+                    <li class="menu__item">
+                        <a
+                            href="../pages/cards.html"
+                            class="menu__link"
+                            target="_blank"
+                            >Карточки</a
+                        >
+                    </li>
+                    <li class="menu__item">
+                        <a href class="menu__link" aria-current="page"
+                            >Товар/корзина</a
+                        >
+                    </li>
+                    <li class="menu__item">
+                        <a
+                            class="menu__link menu__link--patreon"
+                            href="../pages/themes.html"
+                            target="_blank"
+                            >Тема</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="cards">
+            <article class="cards__item product">
+                <a href="#" class="product__switch image-switch">
+                    <div class="image-switch__item">
+                        <div class="image-switch__img">
+                            <img
+                                src="../images/cards/macbook.jpg"
+                                alt="Макбук"
+                            />
+                        </div>
+                    </div>
+                    <div class="image-switch__item">
+                        <div class="image-switch__img">
+                            <img
+                                src="../images/cards/macbook-2.jpg"
+                                alt="Макбук"
+                            />
+                        </div>
+                    </div>
+                    <div class="image-switch__item">
+                        <div class="image-switch__img">
+                            <img
+                                src="../images/cards/macbook-3.jpg"
+                                alt="Макбук"
+                            />
+                        </div>
+                    </div>
+                </a>
+                <ul class="product__image-pagination image-pagination">
+                    <li class="image-pagination__item" aria-hidden="true"></li>
+                </ul>
+                <h3 class="product__title">
+                    <a href="#"
+                        >Ноутбук Apple MacBook Pro 16 TB i7 2.6/16/512 SSD SG
+                        MVVJ2RU/A
+                    </a>
+                </h3>
+                <div class="product__props">
+                    <span class="product__rating rating">
+                        <svg
+                            class="rating__icon"
+                            aria-hidden="true"
+                            width="16"
+                            height="15"
+                        >
+                            <use
+                                class="rating__star"
+                                href="images/sprite.svg#star"
+                            ></use>
+                        </svg>
+                        4,5
+                    </span>
+                    <span class="product_testimonials">83 отзыва</span>
+                </div>
+                <div class="product__info">
+                    <span class="product__term">Артикул: 879876</span>
+                    <span class="product__available">В наличии: 13 шт</span>
+                </div>
+                <div class="product__price product-price">
+                    <span class="product-price__current">190 789 ₽</span
+                    ><span class="product-price__old">194 578 ₽</span>
+                </div>
+                <button class="product__btn">Добавить в корзину</button>
+            </article>
+        </section>
+
+        <script src="../js/main.js"></script>
+    </body>
+</html>

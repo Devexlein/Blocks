@@ -21,32 +21,30 @@
          <p class="logo__tagline">Решения, компоновка и элементы</p>
       </div>
       <nav class="header__menu menu">
-         <button class="menu__button menu__button--open" type="button" aria-expanded="false" aria-controls="menu__list">
+         <button class="menu__button" type="button" aria-expanded="false" aria-controls="menu__list" aria-label="Открыть меню">
             <svg class="menu__icon" aria-hidden="true" width="32" height="32">
                <use class="menu__icon-menu" href="images/sprite.svg#menu"></use>
                <use class="menu__icon-cross" href="images/sprite.svg#cross"></use>
             </svg>
          </button>
-         <ul class="menu__list menu__list--open" id="menu__list" role="list">
+         <ul class="menu__list" id="menu__list" role="list">
             <li class="menu__item">
                <p class="menu__link menu__link--desc menu__link--inactive">Для мобильного меню используется сетка Grid (gap, выстраивание в колонку)
                   и абсолютное позиционирование (шапка и меню не мешают друг другу, z-index); контент скрывается тенью; иконка открытого и
                   закрытого меню из svg-sprite подключается двумя тегами "use"; капсулирование стилей на базовые и тип экрана (избегаем импорта, подгружаем только необходимые)</p>
             </li>
             <li class="menu__item">
-               <a class="menu__link menu__link--current" href>Колонки</a>
+               <a class="menu__link menu__link--current" href aria-current="page">Колонки</a>
             </li>
             <li class="menu__item">
-               <a href="./pages/themes.html" class="menu__link" target="_blank">Тема</a>
+               <a href="./pages/cards.html" class="menu__link" target="_blank">Карточки</a>
             </li>
             <li class="menu__item">
-               <a class="menu__link menu__link--inactive">Календарь</a>
+               <a href="./pages/shop-card.html" class="menu__link" target="_blank">Товар/корзина</a>
             </li>
             <li class="menu__item">
-               <a class="menu__link menu__link--inactive">О проекте</a>
-            </li>
-            <li class="menu__item">
-               <a class="menu__link menu__link--patreon" href>Фон</a>
+               <a class="menu__link menu__link--patreon"href="./pages/themes.html"
+                            target="_blank">Тема</a>
             </li>
          </ul>
       </nav>
@@ -313,19 +311,7 @@
 
    </section>
 
-   <script>
-      (() => {
-         const menuButton = document.querySelector('.menu__button');
-         const menuList = document.querySelector('.menu__list');
-
-         menuButton.addEventListener('click', () => {
-            let expanded = menuButton.getAttribute('aria-expanded') === 'true' || 'false';
-            menuButton.setAttribute('aria-expanded', !expanded);
-            menuButton.classList.toggle('menu__button--open');
-            menuList.classList.toggle('menu__list--open');
-         });
-      })();
-   </script>
+   <script src="./js/main.js"></script>
 </body>
 
 </html>
