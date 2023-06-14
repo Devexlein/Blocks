@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 /* Обнуление и общие стили */
 *,
 *::after,
@@ -113,7 +113,6 @@ button::-moz-focus-inner {
     line-height: 1.5;
     /* Улучшить рендеринг текста (отключаем субпиксельное сглаживание в Chrome и Safari) */
     -webkit-font-smoothing: antialiased;
-
     font-family: 'Dewi', sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -166,15 +165,18 @@ button::-moz-focus-inner {
 /** Переменные */
 :root {
     --clr: #083d41;
-    /* --color-dark: #4d4d4d;
-	--color-light: #808080;
-	--accent-color: #5d71dd; */
 
-    --basic-black: #000000;
+    --accent-color: #5d71dd;
+    --accent-hover-color: #7c8de6;
+    --accent-active-color: #2e44c0;
+
+    --basic-black: ;
     --basic-dark: #273238;
     --basic-semi-light: #696969;
     --basic-neutral: #b1b3b6;
     --basic-light: #e9eaeb;
+    --basic-gray: #4d4d4d;
+    --basic-light-gray: #808080;
     --basic-white: #ffffff;
 
     --special-extra-dark: #386d9b;
@@ -300,7 +302,8 @@ button::-moz-focus-inner {
     width: -moz-fit-content;
     width: fit-content;
     color: var(--clr);
-    font-size: 16px;}
+    font-size: 16px;
+}
 .box-description__link {
     margin-bottom: 20px;
     display: inline-block;
@@ -329,7 +332,7 @@ button::-moz-focus-inner {
     overflow: hidden;
     border-radius: 50%;
 }
-.card__video {  
+.card__video {
     border-radius: 15px;
 }
 .imgBx img,
@@ -451,13 +454,13 @@ button::-moz-focus-inner {
 }
 .card__content button:before {
     top: 22px;
-    left: -29px;    
+    left: -29px;
     border-top-right-radius: 20px;
     box-shadow: 5px -7px var(--basic-light);
 }
 .card__content button:after {
     top: 22px;
-    right: -29px;    
+    right: -29px;
     border-top-left-radius: 20px;
     box-shadow: -5px -7px var(--basic-light);
 }
@@ -493,11 +496,11 @@ button::-moz-focus-inner {
     text-transform: uppercase;
 }
 .card__content h2 span {
-  font-size: 0.9em;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: #e91e63;
-  text-transform: initial;
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #e91e63;
+    text-transform: initial;
 }
 .card__content ul {
     padding: 0 10px;
@@ -508,7 +511,7 @@ button::-moz-focus-inner {
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-evenly;
 }
-.card__content ul li {    
+.card__content ul li {
     padding: 0 10px;
     list-style: none;
     display: flex;
@@ -522,7 +525,7 @@ button::-moz-focus-inner {
     border-right: 1px solid #ccc;
 }
 .card__content ul li span {
-    font-size: 1.75em;    
+    font-size: 1.75em;
     color: #333;
 }
 .card__content button {
@@ -554,50 +557,157 @@ button::-moz-focus-inner {
 .cards__item {
 }
 .product {
+    padding: 20px;
+    width: 285px;
+    color: var(--basic-light-gray);
+    background: var(--basic-white);
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+.product__image {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    height: 162px;
 }
 .product__switch {
 }
 .image-switch {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
 .image-switch__item {
+    flex-grow: 1;
+    cursor: pointer;
 }
 .image-switch__img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    background: var(--basic-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+.image-switch__img img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.image-switch__item:first-child .image-switch__img {
+    opacity: 1;
+    z-index: -1;
+}
+.image-switch__item:hover .image-switch__img {
+    opacity: 1;
+    z-index: -1;
 }
 .product__image-pagination {
 }
 .image-pagination {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+    display: flex;
+    justify-content: center;
 }
 .image-pagination__item {
+    margin: 0 3px;
+    width: 4px;
+    height: 4px;
+    background: #c4c4c4;
+    border-radius: 50%;
 }
 .product__title {
+    margin-bottom: 10px;
+    color: var(--basic-gray);
+    line-height: 1.43;
 }
 .product__props {
+    margin-bottom: 13px;
+    display: flex;
+    align-items: center;
 }
 .product__rating {
 }
 .rating {
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent-color);
+    font-weight: 600;
 }
-.rating__icon {
+.rating svg {
+    margin-right: 5px;
+    fill: currentColor;
 }
 .rating__star {
 }
 .product_testimonials {
 }
 .product__info {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
 }
 .product__term {
 }
 .product__available {
 }
 .product__price {
+    margin-bottom: 19px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: -webkit-max-content 1fr;
+    grid-template-columns: max-content 1fr;
+    -moz-column-gap: 14px;
+    column-gap: 14px;
+    align-items: center;
 }
 .product-price {
 }
 .product-price__current {
+    font-family: 'Dewi Expanded', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--basic-gray);
 }
 .product-price__old {
+    font-size: 12px;
+    -webkit-text-decoration-line: line-through;
+    text-decoration-line: line-through;
 }
 .product__btn {
+    padding: 12px 20px;
+    width: 100%;
+    color: var(--basic-white);
+    background: var(--accent-color);
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in;
+}
+.product__btn:hover,
+.product__btn:focus {
+    background: var(--accent-hover-color);
+}
+.product__btn:active {
+    background: var(--accent-active-color);
 }
 /* ======= THEMES-PAGE ===================================================================================== */
 .sky {
@@ -649,13 +759,11 @@ button::-moz-focus-inner {
     background-repeat: no-repeat;
     background-size: 24px;
     transition: -webkit-filter 0.2s ease-in;
-    transition: filter 0.2s ease-in;
     transition: filter 0.2s ease-in, -webkit-filter 0.2s ease-in;
 }
 .switcher__radio:focus {
     outline: none;
 }
-
 .switcher__status {
     position: absolute;
     top: 0;
@@ -701,28 +809,22 @@ button::-moz-focus-inner {
     padding: 15px;
     background-color: lightblue;
 }
-
 .columns-section__box {
     margin-bottom: 30px;
 }
-
 .columns-section__box--salmon {
     background-color: darksalmon;
 }
-
 .box {
     padding: 15px;
 }
-
 .box__description {
     margin-bottom: 10px;
     color: maroon;
 }
-
 .box__description--green {
     color: darkgreen;
 }
-
 .box__description span {
     font-weight: 700;
 }
@@ -742,7 +844,6 @@ button::-moz-focus-inner {
     /* для улучшения кроссбраузерности */
     justify-content: space-between;
 }
-
 .columns-flex__item {
     /* width: 50%; */
     /* для улучшения кроссбраузерности */
@@ -756,7 +857,6 @@ button::-moz-focus-inner {
     -moz-column-gap: 20px;
     column-gap: 20px;
 }
-
 .columns-multi__item {
     /* чтобы контент не перетекал из одного столбца в другой */
     -moz-column-break-inside: avoid;
@@ -768,7 +868,6 @@ button::-moz-focus-inner {
     word-spacing: 20px;
     font-size: 0;
 }
-
 .columns-inline__item {
     display: inline-block;
     width: calc(50% - 10px);
@@ -782,15 +881,12 @@ button::-moz-focus-inner {
     /* overflow: hidden; содержимое может обрезаться*/
     display: flow-root;
 }
-
 .columns-float__item {
     width: calc(50% - 10px);
 }
-
 .columns-float__item--first {
     float: left;
 }
-
 .columns-float__item--second {
     float: right;
 }
@@ -800,16 +896,13 @@ button::-moz-focus-inner {
 .columns-table {
     border-collapse: collapse;
 }
-
 .columns-table__item {
     width: 50%;
     vertical-align: top;
 }
-
 .columns-table__item--first {
     padding-right: 10px;
 }
-
 .columns-table__item--second {
     padding-left: 10px;
 }
@@ -818,7 +911,6 @@ button::-moz-focus-inner {
 .box--width {
     height: 350px;
 }
-
 .columns-frame {
     display: block;
     width: 100%;
@@ -835,7 +927,6 @@ button::-moz-focus-inner {
     background-image: -moz-element(#news-first), -moz-element(#news-second);
     background-position: left top, right top;
 }
-
 .columns-bg__item {
     /* прячем колонки */
     -webkit-clip-path: inset(50%);
@@ -855,17 +946,14 @@ button::-moz-focus-inner {
 .columns-position {
     position: relative;
 }
-
 .columns-position__item {
     position: absolute;
     top: 0;
     width: calc(50% - 10px);
 }
-
 .columns-position__item--first {
     left: 0;
 }
-
 .columns-position__item--second {
     right: 0;
 }
@@ -877,15 +965,12 @@ button::-moz-focus-inner {
     -ms-writing-mode: tb-lr;
     writing-mode: vertical-lr;
 }
-
 .columns-writing__item {
     width: 560px;
     -webkit-writing-mode: horizontal-tb;
     -ms-writing-mode: lr-tb;
     writing-mode: horizontal-tb;
 }
-
 .columns-writing__item + .columns-writing__item {
     margin-left: 20px;
-}
 }
