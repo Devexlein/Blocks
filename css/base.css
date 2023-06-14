@@ -293,17 +293,20 @@ button::-moz-focus-inner {
     display: flex;
     justify-content: space-between;
 }
-.box-description__link {
+.box-description__inner {
     margin-right: 20px;
     flex: 0 1 auto;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     color: var(--clr);
-    font-size: 16px;
+    font-size: 16px;}
+.box-description__link {
+    margin-bottom: 20px;
+    display: inline-block;
+    color: tomato;
 }
 .box-description__image {
-    /* flex: 0 0 70%; */
     max-width: 200px;
 }
 .box-description__image img {
@@ -316,12 +319,10 @@ button::-moz-focus-inner {
     justify-content: center;
     align-items: center;
     background-color: var(--clr);
-    /* background-color: var(--basic-light); */
 }
 .cards-box__item {
     margin-bottom: 30px;
 }
-
 .imgBx {
     position: absolute;
     inset: 0;
@@ -345,16 +346,13 @@ button::-moz-focus-inner {
 .news--first {
     background-color: lightgreen;
 }
-
 .news__title {
     padding: 15px 15px 10px;
     font-size: 18px;
 }
-
 .news__lead {
     padding: 0 15px 15px;
 }
-
 .news--second {
     background-color: peachpuff;
 }
@@ -363,26 +361,21 @@ button::-moz-focus-inner {
     .logo__image {
         grid-row: span 2;
     }
-
     .logo__title {
         align-self: end;
     }
-
     .logo__tagline {
         align-self: center;
     }
-
     .menu__button {
         display: none;
     }
-
     .menu__list {
         display: grid;
         grid-auto-flow: column;
         -moz-column-gap: 8px;
         column-gap: 8px;
     }
-
     .header {
         padding-left: 24px;
         padding-right: 24px;
@@ -390,13 +383,12 @@ button::-moz-focus-inner {
         grid-template-columns: max-content max-content;
         justify-content: space-between;
     }
-
     .header__menu {
         align-self: center;
     }
 }
 /* ======= CARDS-PAGE ===================================================================================== */
-
+/* =------ Inverted border-radius Card --------------------------------------= */
 .card {
     position: relative;
     width: 320px;
@@ -469,7 +461,6 @@ button::-moz-focus-inner {
     border-top-left-radius: 20px;
     box-shadow: -5px -7px var(--basic-light);
 }
-
 .card__circle {
     position: absolute;
     top: 50%;
@@ -481,7 +472,6 @@ button::-moz-focus-inner {
     background-color: #afe63a;
     border: 10px solid var(--clr);
 }
-
 .card__content {
     padding: 30px 10px 20px;
     position: absolute;
@@ -509,7 +499,6 @@ button::-moz-focus-inner {
   color: #e91e63;
   text-transform: initial;
 }
-
 .card__content ul {
     padding: 0 10px;
     width: 100%;
@@ -519,7 +508,6 @@ button::-moz-focus-inner {
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-evenly;
 }
-
 .card__content ul li {    
     padding: 0 10px;
     list-style: none;
@@ -533,12 +521,10 @@ button::-moz-focus-inner {
 .card__content ul li:not(:last-child) {
     border-right: 1px solid #ccc;
 }
-
 .card__content ul li span {
     font-size: 1.75em;    
     color: #333;
 }
-
 .card__content button {
     position: relative;
     top: 25px;
@@ -555,7 +541,6 @@ button::-moz-focus-inner {
     box-shadow: 0 0 0 10px var(--basic-light);
     transition: 0.5s;
 }
-
 .card__content button:hover {
     letter-spacing: 0.5em;
     background: #ff3d7f;
@@ -566,7 +551,6 @@ button::-moz-focus-inner {
     padding: 100px;
     font-family: 'Noto Sans', sans-serif;
 }
-
 .cards__item {
 }
 .product {
