@@ -554,8 +554,7 @@ button::-moz-focus-inner {
     padding: 100px;
     font-family: 'Noto Sans', sans-serif;
 }
-.cards__item {
-}
+/* .cards__item {} */
 .product {
     padding: 20px;
     width: 285px;
@@ -570,8 +569,7 @@ button::-moz-focus-inner {
     display: block;
     height: 162px;
 }
-.product__switch {
-}
+/* .product__switch {} */
 .image-switch {
     position: absolute;
     left: 0;
@@ -607,7 +605,6 @@ button::-moz-focus-inner {
     -o-object-fit: cover;
     object-fit: cover;
 }
-
 .image-switch__item:first-child .image-switch__img {
     opacity: 1;
     z-index: -1;
@@ -616,8 +613,7 @@ button::-moz-focus-inner {
     opacity: 1;
     z-index: -1;
 }
-.product__image-pagination {
-}
+/* .product__image-pagination {} */
 .image-pagination {
     position: absolute;
     bottom: 15px;
@@ -634,6 +630,9 @@ button::-moz-focus-inner {
     background: #c4c4c4;
     border-radius: 50%;
 }
+.image-pagination__item--active {
+    background: var(--accent-color);
+}
 .product__title {
     margin-bottom: 10px;
     color: var(--basic-gray);
@@ -644,8 +643,7 @@ button::-moz-focus-inner {
     display: flex;
     align-items: center;
 }
-.product__rating {
-}
+/* .product__rating {} */
 .rating {
     margin-right: 10px;
     display: inline-flex;
@@ -657,20 +655,14 @@ button::-moz-focus-inner {
     margin-right: 5px;
     fill: currentColor;
 }
-.rating__star {
-}
-.product_testimonials {
-}
+/* .rating__star {} .product_testimonials {} */
 .product__info {
     margin-bottom: 14px;
     display: flex;
     flex-direction: column;
     font-size: 12px;
 }
-.product__term {
-}
-.product__available {
-}
+/* .product__term {} .product__available {} */
 .product__price {
     margin-bottom: 19px;
     display: grid;
@@ -680,8 +672,6 @@ button::-moz-focus-inner {
     -moz-column-gap: 14px;
     column-gap: 14px;
     align-items: center;
-}
-.product-price {
 }
 .product-price__current {
     font-family: 'Dewi Expanded', sans-serif;
