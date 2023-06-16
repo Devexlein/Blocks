@@ -1,34 +1,36 @@
 @media (width <=767.98px) {
+    /* =------ logo --------------------------------------= */
+    .logo__title {
+        align-self: center;
+    }
+    .logo__tagline {
+        display: none;
+    }
+    /* =------ nav --------------------------------------= */
     .menu {
         display: grid;
     }
-
     .menu__button {
         margin-top: 24px;
         margin-right: 16px;
         justify-self: end;
         z-index: 1;
     }
-
     .menu__icon {
         stroke: var(--basic-black, #000000);
     }
-
     .menu__icon:hover {
         stroke: var(--special-neutral, #61afb4);
     }
-
     .menu__icon-menu,
     .menu__link--desc,
     .menu__button--open .menu__icon-cross {
         display: block;
     }
-
     .menu__icon-cross,
     .menu__button--open .menu__icon-menu {
         display: none;
     }
-
     .menu__list {
         padding: 12px 64px 24px;
         display: none;
@@ -37,38 +39,26 @@
         box-shadow: 0 50vh 0 50vh
             var(--special-dark-10a, rgb(59, 132, 187, 0.1));
     }
-
     .menu__list--open {
         display: grid;
     }
-
     .menu__link--patreon {
         margin-left: -18px;
     }
-
     .header {
         padding-left: 16px;
         padding-right: 16px;
     }
-
     .header__menu {
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
     }
-
     .header__logo {
         z-index: 1;
     }
 }
 
-@media (width <=767.98px) {
-    .logo__title {
-        align-self: center;
-    }
-
-    .logo__tagline {
-        display: none;
-    }
-}
+/* @media (width <=767.98px) {  
+} */
