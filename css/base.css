@@ -157,9 +157,9 @@ button::-moz-focus-inner {
 } */
 
 [class*='__container'] {
-    max-width: 1250px;
+    max-width: 1260px;
     margin: 0 auto;
-    padding: 0px 15px;
+    padding: 0px var(--gutter);
 }
 
 /** Переменные */
@@ -187,6 +187,8 @@ button::-moz-focus-inner {
     --special-semi-light: #81c36d;
     --special-light: #afe63a;
     --special-extra-light: #c6f523;
+
+    --gutter: 20px;
 }
 
 /* Базовые стили элементов */
@@ -540,10 +542,53 @@ button::-moz-focus-inner {
     padding: 100px 0;
     font-family: 'Noto Sans', sans-serif;
 }
+.products__container {
+}
+.products__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gutter);
+}
+.products__filters {
+    position: relative;
+}
+._fixed {
+    position: fixed;
+    top: var(--gutter);
+    left: 0;
+}
+._absolute {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.filters {
+}
+.filters__item {
+}
+.filter-price {
+}
+.filter-price__title {
+}
+.filter-price__slider {
+}
+.filter-price__inputs {
+    width: 100%;
+    border: 1px solid #03a9f4;
+}
+.filter-price__input {
+}
+.products__items {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gutter);
+}
+.products__item-wrap {
+}
 /* .products__item {} */
 .product {
-    padding: 20px;
-    width: 280px;
+    padding: var(--gutter);
     color: var(--basic-light-gray);
     background: var(--basic-white);
     border: 1px solid #d9d9d9;

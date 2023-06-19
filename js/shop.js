@@ -2,8 +2,8 @@
 
 const products = document.querySelectorAll('.product');
 
+//* СЛАЙДЕР ТОВАРОВ с пагинацией
 if (products) {
-    //* слайдер изображений товара с пагинацией
     products.forEach((el) => {
         let currentProduct = el;
         const imageSwitchItems = el.querySelectorAll('.image-switch__item');
@@ -54,3 +54,57 @@ if (products) {
         }
     });
 }
+
+//* FIXED-BLOCK, перемещающийся при прокрутке секции с карточками товаров
+const fixedBlock = document.querySelector('.filter-price'),
+    // (родитель) для определения нижней границы скрола для фильтров
+    filters = document.querySelector('.filters'),
+    gutter = parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue('--gutter')
+    ),
+    // для расчета left-позиции fixedBlock
+    container = document.querySelector('.products__container'),
+    offsetLeft = container.offsetLeft + gutter,
+    filtersOffsetTop = filters.offsetTop,
+    // ширина блока с фильтрами
+    filtersWidth = filters.offsetWidth,
+    // верхний отступ блока с фильтрами
+    smallOffset = gutter;
+
+// функция движения fixedBlock
+const fixedScrollBlock = () => {
+    // получаем скрол (от верхней границы окна)
+    let scrollDistance = window.scrollY;
+
+    // условие: скрол в зоне карточек товаров
+    if (
+        scrollDistance > filtersOffsetTop - smallOffset &&
+        scrollDistance <= filters.offsetHeight + filtersOffsetTop
+    ) {
+        fixedBlock.style.left = `${offsetLeft}px`;
+        fixedBlock.style.width = `${filtersWidth}px`;
+        fixedBlock.classList.remove('_absolute');
+        fixedBlock.classList.add('_fixed');
+    } else {
+        fixedBlock.style.left = `0px`;
+        fixedBlock.style.width = `100%`;
+        fixedBlock.classList.remove('_fixed');
+    }
+
+    // при достижении конца блока карточек, возвращаем абсолют фильтрам
+    if (
+        scrollDistance >=
+        filtersOffsetTop -
+            smallOffset +
+            filters.offsetHeight -
+            fixedBlock.offsetHeight
+    ) {
+        fixedBlock.classList.add('_absolute');
+        fixedBlock.style.left = `0px`;
+        fixedBlock.style.width = `100%`;
+        fixedBlock.classList.remove('_fixed');
+    }
+};
+
+// обработчик скрола (вызов функции движения fixedBlock при старте страницы и скроле)
+window.addEventListener('scroll', fixedScrollBlock);
