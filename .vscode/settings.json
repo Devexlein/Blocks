@@ -1,3 +1,9 @@
 {
-    "liveServer.settings.port": 5503
+    "liveServer.settings.port": 5503,
+    // Set the default
+    "editor.formatOnSave": false,
+    // Enable per-language
+    "[javascript]": {
+        "editor.formatOnSave": true
+    }
 }

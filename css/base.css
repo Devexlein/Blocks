@@ -169,8 +169,9 @@ button::-moz-focus-inner {
     --accent-color: #5d71dd;
     --accent-hover-color: #7c8de6;
     --accent-active-color: #2e44c0;
+    --accent-quantity-color: #de707b;
 
-    --basic-black: ;
+    /* --basic-black: ; */
     --basic-dark: #273238;
     --basic-semi-light: #696969;
     --basic-neutral: #b1b3b6;
@@ -266,6 +267,21 @@ button::-moz-focus-inner {
     width: 16px;
     height: 16px;
     content: url('../images/patreon.svg');
+}
+/* =------ btn --------------------------------------= */
+.btn {
+    padding: 12px 20px;
+    color: var(--basic-white);
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in;
+}
+.btn:hover,
+.btn:focus {
+    background: var(--accent-hover-color);
+}
+.btn:active {
+    background: var(--accent-active-color);
 }
 
 /* =------ title --------------------------------------= */
@@ -538,12 +554,180 @@ button::-moz-focus-inner {
 }
 
 /* ======= SHOP-PAGE ===================================================================================== */
+
+/* =------ header-products section --------------------------------------= */
+.header-products {
+    position: relative;
+    z-index: 100;
+    font-family: 'Noto Sans', sans-serif;
+   color: var(--basic-gray);
+    background: var(--basic-white);
+    box-shadow: 0px 4px 4px 0px rgba(135, 135, 135, 0.25);
+}
+.header-products__container {
+}
+.header-products__nav {
+}
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.nav__list {
+    display: flex;
+    align-items: center;
+}
+.nav__item:not(:last-child) {
+    margin-right: 60px;
+}
+.nav__link {
+   font-family: 'Roboto', sans-serif;
+   font-weight: 500;
+   font-size: 16px;
+}
+.header-products__cart {
+    margin-left: 40px;
+}
+.cart {
+   position: relative;
+   padding: 40px 20px;
+   font-family: 'Noto Sans', sans-serif;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+.cart.active:hover {
+    background-color: rgba(93, 113, 221, 0.1);
+}
+.cart__text {
+   font-family: 'Roboto', sans-serif;  
+   font-weight: 500;
+   font-size: 16px;
+}
+.cart__quantity {
+    position: absolute;
+    right: 7px;
+    top: 40%;
+    transform: translateY(-50%);
+
+    display: inline-flex;
+    padding: 2px;
+    min-height: 16px;
+    min-width: 16px;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    color: var(--basic-white);
+
+    background-color: var(--accent-quantity-color);
+    border-radius: 50%;
+}
+.cart-content {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 490px;
+
+    background-color: var(--basic-white);
+    box-shadow: 0px 4px 4px 0px rgba(135, 135, 135, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    cursor: default;
+    transition: opacity .3s, visibility .3s;
+}
+.cart.active:hover .cart-content {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s, visibility .3s;
+}
+.cart-content__list {
+    max-height: 330px;
+}
+.simplebar-track.simplebar-vertical {
+    right: 5px;
+    margin-top: 20px;
+    width: 4px;
+    height: calc(100% - 40px);
+    border-radius: 5px;
+
+    background: rgba(77, 77, 77, 0.1);
+}
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    border-radius: 5px;
+
+    background: rgba(77, 77, 77, 0.1);
+    opacity: 1;
+}
+.cart-content__item {
+}
+.cart-content__product {
+}
+.cart-product {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+.cart-product:hover {
+    background-color: rgba(93, 113, 221, 0.1);
+}
+.cart-product__image {
+    margin-right: 20px;
+    max-width: 100px;
+    max-height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+.cart-product__text {
+}
+.cart-product__title {
+    margin-bottom: 15px;
+    max-width: 280px;
+}
+.cart-product__price {    
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+.cart-product__delete {
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    background: url('../images/trash 2.svg') center / cover no-repeat;
+}
+.cart-content__bottom {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eaeaea;
+}
+.cart-content__fullprice {
+    display: grid;
+    row-gap: 10px;
+}
+.fullprice {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+.cart-content__btn {
+    flex: 0 1 246px;
+}
+/* =------ products section --------------------------------------= */
 .products {
-    padding: 100px 0;
+    padding: 90px 0;
     font-family: 'Noto Sans', sans-serif;
 }
-.products__container {
-}
+/* .products__container {} */
 .products__content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -562,30 +746,23 @@ button::-moz-focus-inner {
     bottom: 0;
     left: 0;
 }
-.filters {
-}
-.filters__item {
-}
-.filter-price {
-}
-.filter-price__title {
-}
-.filter-price__slider {
-}
+/* .filters {}
+.filters__item {}
+.filter-price {}
+.filter-price__title {}
+.filter-price__slider {} */
 .filter-price__inputs {
     width: 100%;
     border: 1px solid #03a9f4;
 }
-.filter-price__input {
-}
+/* .filter-price__input {} */
 .products__items {
     grid-column: span 3;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--gutter);
 }
-.products__item-wrap {
-}
+/* .products__item-wrap {} */
 /* .products__item {} */
 .product {
     padding: var(--gutter);
@@ -716,20 +893,10 @@ button::-moz-focus-inner {
     text-decoration-line: line-through;
 }
 .product__btn {
-    padding: 12px 20px;
     width: 100%;
-    color: var(--basic-white);
-    background: var(--accent-color);
-    border-radius: 4px;
-    transition: background-color 0.3s ease-in;
 }
-.product__btn:hover,
-.product__btn:focus {
-    background: var(--accent-hover-color);
-}
-.product__btn:active {
-    background: var(--accent-active-color);
-}
+
+
 /* ======= THEMES-PAGE ===================================================================================== */
 .sky {
     display: grid;

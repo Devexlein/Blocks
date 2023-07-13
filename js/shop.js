@@ -59,6 +59,7 @@ if (products) {
 const fixedBlock = document.querySelector('.filter-price'),
     // (родитель) для определения нижней границы скрола для фильтров
     filters = document.querySelector('.filters'),
+    // получаем числовое значение переменной
     gutter = parseInt(
         getComputedStyle(document.documentElement).getPropertyValue('--gutter')
     ),
@@ -82,6 +83,7 @@ const fixedScrollBlock = () => {
         scrollDistance <= filters.offsetHeight + filtersOffsetTop
     ) {
         fixedBlock.style.left = `${offsetLeft}px`;
+        // ограничиваем ширину блока с фильтрами
         fixedBlock.style.width = `${filtersWidth}px`;
         fixedBlock.classList.remove('_absolute');
         fixedBlock.classList.add('_fixed');
@@ -108,3 +110,7 @@ const fixedScrollBlock = () => {
 
 // обработчик скрола (вызов функции движения fixedBlock при старте страницы и скроле)
 window.addEventListener('scroll', fixedScrollBlock);
+
+//* Добавление товара в корзину
+
+const productsBtn = document.querySelectorAll('.product__btn');
