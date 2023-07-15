@@ -508,6 +508,36 @@
                 </div>
             </section>
         </main>
+        <div class="modal">
+            <div class="modal__wrap order-modal">
+                <div class="modal__content order-modal__content">
+                    <div class="order-modal__head">
+                        <h2 class="order-modal__title">Оформление заказа</h2>
+                        <span class="order-modal__number">Заказ № 3456 67</span>
+                    </div>
+                    <div class="order-modal__info">
+                        <div class="order-modal__quantity order-modal__info-item">Товаров в заказе:<span>3 шт</span></div>
+                        <div class="order-modal__summ order-modal__info-item">Общая сумма заказа:<span>568 789 ₽</span></div>
+                        <div class="order-modal__products order-modal__info-item">Состав заказа<button class="order-modal__open"></button></div>
+                    </div>
+                    <form action="#" class="order-modal__form order">
+                        <label for="" class="order__label">
+                            <span class="order__text">Ваше имя</span>
+                            <input type="text" class="order__input">
+                        </label>
+                        <label for="" class="order__label">
+                            <span class="order__text">Номер телефона</span>
+                            <input type="tel" class="order__input" placeholder="+7 (___)___-__-__">
+                        </label>
+                        <label for="" class="order__label">
+                            <span class="order__text">Электронная почта</span>
+                            <input type="email" class="order__input" placeholder="post@gmail.com">
+                        </label>
+                        <button class="order__btn btn" type="submit">Оформить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <script src="../js/simplebar.js"></script>
         <script src="../js/shop.js"></script>

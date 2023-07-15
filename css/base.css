@@ -565,14 +565,12 @@ button::-moz-focus-inner {
     position: relative;
     z-index: 100;
     font-family: 'Noto Sans', sans-serif;
-   color: var(--basic-gray);
+    color: var(--basic-gray);
     background: var(--basic-white);
     box-shadow: 0px 4px 4px 0px rgba(135, 135, 135, 0.25);
 }
-.header-products__container {
-}
-.header-products__nav {
-}
+/* .header-products__container {}
+.header-products__nav {} */
 .nav {
     display: flex;
     align-items: center;
