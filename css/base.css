@@ -169,6 +169,9 @@ button::-moz-focus-inner {
 
 /** Переменные */
 :root {
+    --cart-font-family: "Noto Sans", sans-serif;
+    --cart-second-family: "Roboto", sans-serif;
+
     --clr: #083d41;
 
     --accent-color: #5d71dd;
@@ -564,7 +567,7 @@ button::-moz-focus-inner {
 .header-products {
     position: relative;
     z-index: 100;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: var(--cart-font-family);
     color: var(--basic-gray);
     background: var(--basic-white);
     box-shadow: 0px 4px 4px 0px rgba(135, 135, 135, 0.25);
@@ -584,7 +587,7 @@ button::-moz-focus-inner {
     margin-right: 60px;
 }
 .nav__link {
-   font-family: 'Roboto', sans-serif;
+   font-family: var(--cart-second-family);
    font-weight: 500;
    font-size: 16px;
 }
@@ -594,7 +597,7 @@ button::-moz-focus-inner {
 .cart {
    position: relative;
    padding: 40px 20px;
-   font-family: 'Noto Sans', sans-serif;
+   font-family: var(--cart-font-family);
    cursor: pointer;
    transition: background-color 0.3s;
 }
@@ -602,7 +605,7 @@ button::-moz-focus-inner {
     background-color: rgba(93, 113, 221, 0.1);
 }
 .cart__text {
-   font-family: 'Roboto', sans-serif;  
+   font-family: var(--cart-second-family);  
    font-weight: 500;
    font-size: 16px;
 }
@@ -703,7 +706,7 @@ button::-moz-focus-inner {
     max-width: 280px;
 }
 .cart-product__price {    
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--cart-second-family);
     font-size: 20px;
     font-weight: 700;
 }
@@ -725,17 +728,131 @@ button::-moz-focus-inner {
     row-gap: 10px;
 }
 .fullprice {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--cart-second-family);
     font-size: 20px;
     font-weight: 700;
 }
 .cart-content__btn {
     flex: 0 1 246px;
 }
+/* =------ order-modal --------------------------------------= */
+.modal {
+    position: absolute;
+    top: 180px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(105, 107, 120, 0.2);
+}
+/* .modal__wrap {} */
+/* .order-modal {} */
+/* .modal__content {} */
+.order-modal__content {
+    padding: 40px;
+    width: 592px;
+    min-height: 542px;
+
+    font-family: var(--cart-font-family);
+    color: var(--basic-light-gray);
+    background-color: var(--basic-white);
+}
+.order-modal__head {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.order-modal__title {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--accent-color);
+}
+.order-modal__number {    
+    font-size: 12px;
+    color: var(--basic-light-gray);
+}
+.order-modal__info {
+    margin-bottom: 20px;
+    padding: 34px 40px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+/* .order-modal__quantity {} */
+.order-modal__info-item:not(:last-child) {
+    margin-bottom: 15px;
+}
+.order-modal__info-item span {
+    margin-left: 5px;
+    font-weight: 600;
+}
+/* .order-modal__summ {} */
+/* .order-modal__products {} */
+.order-modal__open {
+    position: relative;
+}
+.order-modal__open::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 7px;
+    background: url("../images/arrow.svg") center / contain no-repeat;
+}
+/* .order-modal__form {} */
+.order {
+    padding: 0 40px;
+}
+.order__label {
+    margin-bottom: 14px;    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-weight: 500;
+}
+label:last-of-type {
+    margin-bottom: 20px;
+}
+/* .order__text {} */
+.order__input {
+    padding: 0 14px;
+    width: 240px;
+    height: 45px;
+    border-radius: 4px;
+    
+    background: #efefef;
+}
+.order__input::-webkit-input-placeholder {
+    color: #b1b1b1;
+}
+.order__input::-moz-placeholder {
+    color: #b1b1b1;
+}
+.order__input:-ms-input-placeholder {
+    color: #b1b1b1;
+}
+.order__input::-ms-input-placeholder {
+    color: #b1b1b1;
+}
+.order__input::placeholder {
+    color: #b1b1b1;
+}
+.order__btn {
+    width: 100%;
+}
+
 /* =------ products section --------------------------------------= */
 .products {
     padding: 90px 0;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: var(--cart-font-family);
 }
 /* .products__container {} */
 .products__content {
